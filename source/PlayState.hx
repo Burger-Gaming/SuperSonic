@@ -13,6 +13,9 @@ class PlayState extends FlxState
 	var sanic:FlxSprite;
 	var ground:FlxSprite;
 	var bg:FlxSprite;
+
+	public static var list:Array<String> = ['GHZ/Act1.ogg', 'GHZ/Act2.ogg'];
+
 	override public function create()
 	{
 		super.create();
@@ -50,11 +53,39 @@ class PlayState extends FlxState
 		add(sanic);
 		trace(ground.x);
 
+		if (FlxG.sound.music == null){
+			FlxG.sound.playMusic('assets/music/' + list[FlxG.save.data.song], 1, true);
+		}
 	}
 
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
 		FlxTween.tween(sanic, { x: 624.5 }, 3.5, { ease: FlxEase.circOut });
+		/*for (i in 0...list.length){
+			FlxG.sound.music.play(list[0][1]);
+		}*/
+		if(FlxG.keys.justPressed.RIGHT){
+			switchSong(1);
+		}
+		if(FlxG.keys.justPressed.LEFT){
+			switchSong(-1);
+		}
+	}
+
+	public function switchSong(change:Int = 1){
+		FlxG.save.data.song += change;
+
+		if (FlxG.save.data.song < 0){
+			FlxG.save.data.song = 0;
+		}
+		if (FlxG.save.data.song > 1){
+			FlxG.save.data.song = 1;
+		}
+
+		if (FlxG.sound.music != null){
+			FlxG.sound.music.stop();
+			FlxG.sound.playMusic('assets/music/' + list[FlxG.save.data.song], 1, true);
+		}
 	}
 }
