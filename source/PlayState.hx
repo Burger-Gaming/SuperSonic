@@ -12,10 +12,23 @@ class PlayState extends FlxState
 {
 	var sanic:FlxSprite;
 	var ground:FlxSprite;
+	var bg:FlxSprite;
 	override public function create()
 	{
 		super.create();
 		FlxG.autoPause = false;
+		FlxG.mouse.visible = false;
+
+		bg = new FlxSprite();
+		bg.x = -4096;
+		bg.y = 100;
+		bg.frames = AssetPaths.getSparrowAtlas('bg_ghz');
+		bg.scale.set(2, 2);
+		//ground.animation.addByPrefix("ground", "moving ground", 30, true);
+		// preventing the ground from disappearing
+		bg.animation.addByPrefix("bg", "bg moving instance 1", 30, true);
+		bg.animation.play("bg");
+		add(bg);
 
 		ground = new FlxSprite();
 		ground.x = -2432;
