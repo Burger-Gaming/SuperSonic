@@ -15,6 +15,7 @@ class PlayState extends FlxState
 	override public function create()
 	{
 		super.create();
+		FlxG.autoPause = false;
 
 		ground = new FlxSprite();
 		ground.x = -2432;
