@@ -14,7 +14,8 @@ class PlayState extends FlxState
 	var ground:FlxSprite;
 	var bg:FlxSprite;
 
-	public static var list:Array<String> = ['GHZ/Act1.ogg', 'GHZ/Act2.ogg'];
+	public static var pathList:Array<String> = 
+	['GHZ/GHAct1.ogg', 'GHZ/GHAct2.ogg', 'CPZ/CPAct1.ogg', 'CPZ/CPAct2.ogg'];
 
 	override public function create()
 	{
@@ -54,7 +55,7 @@ class PlayState extends FlxState
 		trace(ground.x);
 
 		if (FlxG.sound.music == null){
-			FlxG.sound.playMusic('assets/music/' + list[FlxG.save.data.song], 1, true);
+			FlxG.sound.playMusic('assets/music/' + pathList[FlxG.save.data.song], 1, true);
 		}
 	}
 
@@ -79,13 +80,13 @@ class PlayState extends FlxState
 		if (FlxG.save.data.song < 0){
 			FlxG.save.data.song = 0;
 		}
-		if (FlxG.save.data.song > 1){
-			FlxG.save.data.song = 1;
+		if (FlxG.save.data.song > 3){
+			FlxG.save.data.song = 3;
 		}
 
 		if (FlxG.sound.music != null){
 			FlxG.sound.music.stop();
-			FlxG.sound.playMusic('assets/music/' + list[FlxG.save.data.song], 1, true);
+			FlxG.sound.playMusic('assets/music/' + pathList[FlxG.save.data.song], 1, true);
 		}
 	}
 }
