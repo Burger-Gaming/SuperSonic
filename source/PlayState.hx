@@ -14,8 +14,12 @@ class PlayState extends FlxState
 	var ground:FlxSprite;
 	var bg:FlxSprite;
 
-	public static var pathList:Array<String> = 
-	['GHZ/GHAct1.ogg', 'GHZ/GHAct2.ogg', 'CPZ/CPAct1.ogg', 'CPZ/CPAct2.ogg'];
+	public static var pathList:Array<Dynamic> = [ // ogg file, which zone it is
+		['Act1.ogg', 'GH'],
+		['Act2.ogg', 'GH'],
+		['Act1.ogg', 'CP'],
+		['Act2.ogg', 'CP']
+	];
 
 	override public function create()
 	{
@@ -55,8 +59,9 @@ class PlayState extends FlxState
 		trace(ground.x);
 
 		if (FlxG.sound.music == null){
-			FlxG.sound.playMusic('assets/music/' + pathList[FlxG.save.data.song], 1, true);
+			FlxG.sound.playMusic('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0], 1, true);
 		}
+		trace('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0]);
 	}
 
 	override public function update(elapsed:Float)
@@ -86,7 +91,8 @@ class PlayState extends FlxState
 
 		if (FlxG.sound.music != null){
 			FlxG.sound.music.stop();
-			FlxG.sound.playMusic('assets/music/' + pathList[FlxG.save.data.song], 1, true);
+			FlxG.sound.playMusic('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0], 1, true);
 		}
+		trace('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0]);
 	}
 }
