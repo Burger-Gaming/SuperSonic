@@ -62,6 +62,10 @@ class PlayState extends FlxState
 			FlxG.sound.playMusic('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0], 1, true);
 		}
 		trace('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0]);
+
+		for (i in 0...pathList.length){
+			FlxG.sound.cache('assets/music/' + pathList[i][1] + "Z/" + pathList[i][1] + pathList[i][0]);
+		}
 	}
 
 	override public function update(elapsed:Float)
@@ -88,7 +92,7 @@ class PlayState extends FlxState
 		if (FlxG.save.data.song > 3){
 			FlxG.save.data.song = 3;
 		}
-
+		
 		if (FlxG.sound.music != null){
 			FlxG.sound.music.stop();
 			FlxG.sound.playMusic('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0], 1, true);
