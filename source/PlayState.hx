@@ -10,7 +10,7 @@ import lime.utils.Assets;
 
 class PlayState extends FlxState
 {
-	var sanic:FlxSprite;
+	var sanic:Runner;
 	var ground:FlxSprite;
 	var bg:FlxSprite;
 
@@ -48,30 +48,29 @@ class PlayState extends FlxState
 		ground.animation.play("ground");
 		add(ground);
 
-		sanic = new FlxSprite().loadGraphic('assets/images/sonicRun.png', true, 31, 38);
+		/*sanic = new FlxSprite().loadGraphic('assets/images/sonicRun.png', true, 31, 38);
 		sanic.animation.add("run", [0, 1, 2, 3, 4, 5], 60, true);
 		sanic.screenCenter(Y);
 		// sanic.screenCenter(X);
 		sanic.x -= sanic.width * 2;
 		sanic.scale.set(6, 6);
 		sanic.animation.play("run");
+		add(sanic);*/
+		
+		sanic = new Runner(0, 0, FlxG.save.data.character);
+		sanic.screenCenter(X);
 		add(sanic);
-		trace(ground.x);
+		
 
 		if (FlxG.sound.music == null){
 			FlxG.sound.playMusic('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0], 1, true);
 		}
 		trace('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0]);
-
-		for (i in 0...pathList.length){
-			FlxG.sound.cache('assets/music/' + pathList[i][1] + "Z/" + pathList[i][1] + pathList[i][0]);
-		}
 	}
 
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
-		FlxTween.tween(sanic, { x: 624.5 }, 3.5, { ease: FlxEase.circOut });
 		/*for (i in 0...list.length){
 			FlxG.sound.music.play(list[0][1]);
 		}*/
@@ -81,6 +80,32 @@ class PlayState extends FlxState
 		if(FlxG.keys.justPressed.LEFT){
 			switchSong(-1);
 		}
+
+		if (FlxG.keys.justPressed.UP){
+			switchChar(1);
+		}
+		if (FlxG.keys.justPressed.DOWN){
+			switchChar(-1);
+		}
+	}
+
+	public function switchChar(change:Int = 1){
+		FlxG.save.data.characterNum += change;
+
+		if (FlxG.save.data.characterNum >= 1){
+			FlxG.save.data.characterNum = 1;
+			FlxG.save.data.character = 'tails';
+		}
+		if (FlxG.save.data.characterNum <= 0){
+			FlxG.save.data.characterNum = 0;
+			FlxG.save.data.character = 'sonic';
+		}
+		trace(FlxG.save.data.characterNum);
+		remove(sanic);
+		sanic = new Runner(0, 0, FlxG.save.data.character);
+		sanic.screenCenter(X);
+		sanic.screenCenter(Y);
+		add(sanic);
 	}
 
 	public function switchSong(change:Int = 1){
