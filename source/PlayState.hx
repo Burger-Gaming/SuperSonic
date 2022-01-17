@@ -26,7 +26,9 @@ class PlayState extends FlxState
 		['Act1.ogg', 'PG'],
 		['Act2.ogg', 'PG'],
 		['Act1.ogg', 'SS'],
-		['Act2.ogg', 'SS']
+		['Act2.ogg', 'SS'],
+		['Act1.ogg', 'HC'],
+		['Act2.ogg', 'HC']
 	];
 
 	override public function create()
@@ -135,8 +137,8 @@ class PlayState extends FlxState
 		if (FlxG.save.data.song < 0){
 			FlxG.save.data.song = 0;
 		}
-		if (FlxG.save.data.song > 11){
-			FlxG.save.data.song = 11;
+		if (FlxG.save.data.song > 13){
+			FlxG.save.data.song = 13;
 		}
 		
 		if (FlxG.sound.music != null){
