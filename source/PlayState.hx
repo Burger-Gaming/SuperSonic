@@ -7,12 +7,14 @@ import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import flixel.graphics.frames.FlxAtlasFrames;
 import lime.utils.Assets;
+import flixel.group.FlxSpriteGroup;
 
 class PlayState extends FlxState
 {
 	var sanic:Runner;
 	var ground:FlxSprite;
 	var bg:FlxSprite;
+	public var stageList = pathList[FlxG.save.data.stage][1];
 
 	public static var pathList:Array<Dynamic> = [ // ogg file, which zone it is
 		['Act1.ogg', 'GH'],
@@ -42,8 +44,8 @@ class PlayState extends FlxState
 
 		bg = new FlxSprite();
 		bg.x = -4096;
-		bg.y = 100;
-		bg.frames = AssetPaths.getSparrowAtlas('bg_ghz');
+		bg.y = 150;
+		bg.frames = AssetPaths.getSparrowAtlas('bg_' + stageList + 'Z');
 		bg.scale.set(2, 2);
 		//ground.animation.addByPrefix("ground", "moving ground", 30, true);
 		// preventing the ground from disappearing
@@ -54,7 +56,7 @@ class PlayState extends FlxState
 		ground = new FlxSprite();
 		ground.x = -2432;
 		ground.y = 425;
-		ground.frames = AssetPaths.getSparrowAtlas('ground_ghz');
+		ground.frames = AssetPaths.getSparrowAtlas('ground_' + stageList + 'Z');
 		//ground.animation.addByPrefix("ground", "moving ground", 30, true);
 		// preventing the ground from disappearing
 		ground.animation.addByIndices("ground", "moving ground", [10, 11, 12, 13, 14, 15, 16, 17, 18], "", 30, true);
@@ -84,9 +86,11 @@ class PlayState extends FlxState
 		}*/
 		if(FlxG.keys.justPressed.RIGHT){
 			switchSong(1);
+			switchStage(1);
 		}
 		if(FlxG.keys.justPressed.LEFT){
 			switchSong(-1);
+			switchStage(-1);
 		}
 
 		if (FlxG.keys.justPressed.UP){
@@ -153,5 +157,76 @@ class PlayState extends FlxState
 			FlxG.sound.playMusic('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0], 1, true);
 		}
 		trace('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0]);
+	}
+
+	public function switchStage(change:Int = 1){
+		FlxG.save.data.stage += change;
+		if (FlxG.save.data.stage <= 0){
+			FlxG.save.data.stage = 0;
+		}
+		if (FlxG.save.data.stage >= 16){
+			FlxG.save.data.stage = 16;
+		}
+		stageList = pathList[FlxG.save.data.stage][1];
+
+		trace(stageList);
+		remove(bg);
+		remove(ground);
+
+		bg = new FlxSprite();
+		bg.x = -4096;
+		bg.y = 150;
+		bg.frames = AssetPaths.getSparrowAtlas('bg_' + stageList + 'Z');
+		bg.scale.set(2, 2);
+		/*if (stageList == 'SP'){
+			bg.y -= 25;
+		}*/
+		//ground.animation.addByPrefix("ground", "moving ground", 30, true);
+		// preventing the ground from disappearing
+		bg.animation.addByPrefix("bg", "bg moving instance 1", 30, true);
+		bg.animation.play("bg");
+		add(bg);
+
+		ground = new FlxSprite();
+		ground.x = -2432;
+		ground.y = 425;
+		ground.frames = AssetPaths.getSparrowAtlas('ground_' + stageList + 'Z');
+		//ground.animation.addByPrefix("ground", "moving ground", 30, true);
+		// preventing the ground from disappearing
+		ground.animation.addByIndices("ground", "moving ground", [10, 11, 12, 13, 14, 15, 16, 17, 18], "", 30, true);
+		ground.animation.play("ground");
+		add(ground);
+
+		remove(sanic);
+		sanic = new Runner(0, 0, FlxG.save.data.character);
+		sanic.screenCenter(X);
+		add(sanic);
+	}
+	public function addStage(stageList:String = 'GH'){
+		var stageList = pathList[FlxG.save.data.stage][1];
+		switch(stageList){
+			case 'GH':
+				bg = new FlxSprite();
+				bg.x = -4096;
+				bg.y = 100;
+				bg.frames = AssetPaths.getSparrowAtlas('bg_ghz');
+				bg.scale.set(2, 2);
+				//ground.animation.addByPrefix("ground", "moving ground", 30, true);
+				// preventing the ground from disappearing
+				bg.animation.addByPrefix("bg", "bg moving instance 1", 30, true);
+				bg.animation.play("bg");
+				add(bg);
+
+				ground = new FlxSprite();
+				ground.x = -2432;
+				ground.y = 425;
+				ground.frames = AssetPaths.getSparrowAtlas('ground_ghz');
+				//ground.animation.addByPrefix("ground", "moving ground", 30, true);
+				// preventing the ground from disappearing
+				ground.animation.addByIndices("ground", "moving ground", [10, 11, 12, 13, 14, 15, 16, 17, 18], "", 30, true);
+				ground.animation.play("ground");
+				add(ground);
+			case 'CP':
+		}
 	}
 }
