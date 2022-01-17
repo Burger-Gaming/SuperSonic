@@ -54,6 +54,9 @@ class PlayState extends FlxState
 		if (stageList == 'FB'){
 			bg.x -= 250;
 		}
+		if (stageList == 'PG'){
+			bg.y -= 250;
+		}
 		add(bg);
 
 		ground = new FlxSprite();
@@ -71,9 +74,9 @@ class PlayState extends FlxState
 		add(sanic);
 
 
-		for (i in 0...pathList.length){
+		/*for (i in 0...pathList.length){
 			FlxG.sound.cache('assets/music/' + pathList[i][1] + "Z/" + pathList[i][1] + pathList[i][0]);
-		}
+		}*/
 
 		if (FlxG.sound.music == null){
 			FlxG.sound.playMusic('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0], 1, true);
@@ -156,7 +159,7 @@ class PlayState extends FlxState
 		}
 		
 		if (FlxG.sound.music != null){
-			FlxG.sound.music.stop();
+			FlxG.sound.music.destroy();
 			FlxG.sound.playMusic('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0], 1, true);
 		}
 		trace('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0]);
@@ -173,13 +176,16 @@ class PlayState extends FlxState
 		stageList = pathList[FlxG.save.data.stage][1];
 
 		trace(stageList);
-		remove(bg);
-		remove(ground);
+		bg.destroy();
+		ground.destroy();
 
 		bg = new FlxSprite();
 		bg.x = -4096;
 		if (stageList == 'FB'){
 			bg.x -= 250;
+		}
+		if (stageList == 'PG'){
+			bg.y -= 250;
 		}
 		bg.y = 150;
 		bg.frames = AssetPaths.getSparrowAtlas('bg_' + stageList + 'Z');
@@ -203,36 +209,9 @@ class PlayState extends FlxState
 		ground.animation.play("ground");
 		add(ground);
 
-		remove(sanic);
+		sanic.destroy();
 		sanic = new Runner(0, 0, FlxG.save.data.character);
 		sanic.screenCenter(X);
 		add(sanic);
-	}
-	public function addStage(stageList:String = 'GH'){
-		var stageList = pathList[FlxG.save.data.stage][1];
-		switch(stageList){
-			case 'GH':
-				bg = new FlxSprite();
-				bg.x = -4096;
-				bg.y = 100;
-				bg.frames = AssetPaths.getSparrowAtlas('bg_ghz');
-				bg.scale.set(2, 2);
-				//ground.animation.addByPrefix("ground", "moving ground", 30, true);
-				// preventing the ground from disappearing
-				bg.animation.addByPrefix("bg", "bg moving instance 1", 30, true);
-				bg.animation.play("bg");
-				add(bg);
-
-				ground = new FlxSprite();
-				ground.x = -2432;
-				ground.y = 425;
-				ground.frames = AssetPaths.getSparrowAtlas('ground_ghz');
-				//ground.animation.addByPrefix("ground", "moving ground", 30, true);
-				// preventing the ground from disappearing
-				ground.animation.addByIndices("ground", "moving ground", [10, 11, 12, 13, 14, 15, 16, 17, 18], "", 30, true);
-				ground.animation.play("ground");
-				add(ground);
-			case 'CP':
-		}
 	}
 }
