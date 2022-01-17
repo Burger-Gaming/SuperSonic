@@ -93,8 +93,8 @@ class PlayState extends FlxState
 	public function switchChar(change:Int = 1){
 		FlxG.save.data.characterNum += change;
 
-		if (FlxG.save.data.characterNum >=  6){
-			FlxG.save.data.characterNum = 6;
+		if (FlxG.save.data.characterNum >=  7){
+			FlxG.save.data.characterNum = 7;
 			//FlxG.save.data.character = '';
 		}
 		if (FlxG.save.data.characterNum <= 0){
@@ -116,6 +116,8 @@ class PlayState extends FlxState
 				FlxG.save.data.character = 'super sonic';
 			case 6:
 				FlxG.save.data.character = 'eggman';
+			case 7:
+				FlxG.save.data.character = 'metal sonic';
 		}
 		trace(FlxG.save.data.characterNum);
 		remove(sanic);
