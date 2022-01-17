@@ -7,6 +7,7 @@ class Runner extends FlxSprite{
 
         x = xPos;
         y = yPos;
+        
 
         switch(char){
             case 'sonic':
@@ -71,6 +72,7 @@ class Runner extends FlxSprite{
                     x -= width * 2;
                     y += 300;
                     scale.set(6, 6);
+                    y -= height * 9 - 30;
                     animation.play("run");
 
             case 'metal sonic':

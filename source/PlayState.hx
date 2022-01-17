@@ -14,6 +14,7 @@ class PlayState extends FlxState
 	var sanic:Runner;
 	var ground:FlxSprite;
 	var bg:FlxSprite;
+	var thing:Float = 0;
 	public var stageList = pathList[FlxG.save.data.stage][1];
 
 	public static var pathList:Array<Dynamic> = [ // ogg file, which zone it is
@@ -61,7 +62,7 @@ class PlayState extends FlxState
 
 		ground = new FlxSprite();
 		ground.x = -2432;
-		ground.y = 425;
+		ground.y = 435;
 		ground.frames = AssetPaths.getSparrowAtlas('ground_' + stageList + 'Z');
 		//ground.animation.addByPrefix("ground", "moving ground", 30, true);
 		// preventing the ground from disappearing
@@ -69,9 +70,10 @@ class PlayState extends FlxState
 		ground.animation.play("ground");
 		add(ground);
 		
-		sanic = new Runner(0, 0, FlxG.save.data.character);
+		sanic = new Runner(0, 435, FlxG.save.data.character);
 		sanic.screenCenter(X);
 		add(sanic);
+
 
 
 		/*for (i in 0...pathList.length){
@@ -142,7 +144,7 @@ class PlayState extends FlxState
 		}
 		trace(FlxG.save.data.characterNum);
 		remove(sanic);
-		sanic = new Runner(0, 0, FlxG.save.data.character);
+		sanic = new Runner(0, 435, FlxG.save.data.character);
 		sanic.screenCenter(X);
 		//sanic.screenCenter(Y);
 		add(sanic);
@@ -198,10 +200,9 @@ class PlayState extends FlxState
 		bg.animation.addByPrefix("bg", "bg moving instance 1", 30, true);
 		bg.animation.play("bg");
 		add(bg);
-
 		ground = new FlxSprite();
 		ground.x = -2432;
-		ground.y = 425;
+		ground.y = 435;
 		ground.frames = AssetPaths.getSparrowAtlas('ground_' + stageList + 'Z');
 		//ground.animation.addByPrefix("ground", "moving ground", 30, true);
 		// preventing the ground from disappearing
@@ -210,7 +211,7 @@ class PlayState extends FlxState
 		add(ground);
 
 		sanic.destroy();
-		sanic = new Runner(0, 0, FlxG.save.data.character);
+		sanic = new Runner(0, 435, FlxG.save.data.character);
 		sanic.screenCenter(X);
 		add(sanic);
 	}
