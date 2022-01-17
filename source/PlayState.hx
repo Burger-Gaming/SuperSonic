@@ -18,7 +18,9 @@ class PlayState extends FlxState
 		['Act1.ogg', 'GH'],
 		['Act2.ogg', 'GH'],
 		['Act1.ogg', 'CP'],
-		['Act2.ogg', 'CP']
+		['Act2.ogg', 'CP'],
+		['Act1.ogg', 'SP'],
+		['Act2.ogg', 'SP']
 	];
 
 	override public function create()
@@ -60,7 +62,11 @@ class PlayState extends FlxState
 		sanic = new Runner(0, 0, FlxG.save.data.character);
 		sanic.screenCenter(X);
 		add(sanic);
-		
+
+
+		for (i in 0...pathList.length){
+			FlxG.sound.cache('assets/music/' + pathList[i][1] + "Z/" + pathList[i][1] + pathList[i][0]);
+		}
 
 		if (FlxG.sound.music == null){
 			FlxG.sound.playMusic('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0], 1, true);
@@ -114,8 +120,8 @@ class PlayState extends FlxState
 		if (FlxG.save.data.song < 0){
 			FlxG.save.data.song = 0;
 		}
-		if (FlxG.save.data.song > 3){
-			FlxG.save.data.song = 3;
+		if (FlxG.save.data.song > 5){
+			FlxG.save.data.song = 5;
 		}
 		
 		if (FlxG.sound.music != null){
