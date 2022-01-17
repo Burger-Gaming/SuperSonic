@@ -64,7 +64,7 @@ class Runner extends FlxSprite{
                  animation.play("run");
 			
 	    case 'eggman':
-                loadGraphic('assets/images/eggmanRun.png', true, 58, 53);
+                loadGraphic(AssetPaths.eggmanRun__png, true, 58, 53); // FOXX I HATE YOU /j
                 animation.add("run", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 30, true);
                 // sanic.screenCenter(X);
                  x -= width * 2;
