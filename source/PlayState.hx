@@ -49,15 +49,6 @@ class PlayState extends FlxState
 		ground.animation.addByIndices("ground", "moving ground", [10, 11, 12, 13, 14, 15, 16, 17, 18], "", 30, true);
 		ground.animation.play("ground");
 		add(ground);
-
-		/*sanic = new FlxSprite().loadGraphic('assets/images/sonicRun.png', true, 31, 38);
-		sanic.animation.add("run", [0, 1, 2, 3, 4, 5], 60, true);
-		sanic.screenCenter(Y);
-		// sanic.screenCenter(X);
-		sanic.x -= sanic.width * 2;
-		sanic.scale.set(6, 6);
-		sanic.animation.play("run");
-		add(sanic);*/
 		
 		sanic = new Runner(0, 0, FlxG.save.data.character);
 		sanic.screenCenter(X);
@@ -98,13 +89,21 @@ class PlayState extends FlxState
 	public function switchChar(change:Int = 1){
 		FlxG.save.data.characterNum += change;
 
-		if (FlxG.save.data.characterNum >= 1){
-			FlxG.save.data.characterNum = 1;
-			FlxG.save.data.character = 'tails';
+		if (FlxG.save.data.characterNum >= 2){
+			FlxG.save.data.characterNum = 2;
+			//FlxG.save.data.character = '';
 		}
 		if (FlxG.save.data.characterNum <= 0){
 			FlxG.save.data.characterNum = 0;
-			FlxG.save.data.character = 'sonic';
+			//FlxG.save.data.character = 'sonic';
+		}
+		switch(FlxG.save.data.characterNum){
+			case 0:
+				FlxG.save.data.character = 'sonic';
+			case 1:
+				FlxG.save.data.character = 'tails';
+			case 2:
+				FlxG.save.data.character = 'knuckles';
 		}
 		trace(FlxG.save.data.characterNum);
 		remove(sanic);

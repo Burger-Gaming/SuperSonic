@@ -26,6 +26,14 @@ class Runner extends FlxSprite{
 		        x -= width * 2;
 		        scale.set(6, 6);
 		        animation.play("run");
+            case 'knuckles':
+                loadGraphic('assets/images/knucklesRun.png', true, 34, 35);
+		        animation.add("run", [0, 1, 2, 3, 4, 5, 6, 7], 60, true);
+		        screenCenter(Y);
+		        // sanic.screenCenter(X);
+		        x -= width * 2;
+		        scale.set(6, 6);
+		        animation.play("run");
         }
         antialiasing = false;
     }
