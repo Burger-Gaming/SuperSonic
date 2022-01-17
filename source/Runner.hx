@@ -90,6 +90,16 @@ class Runner extends FlxSprite{
                     x -= width * 2;
                     scale.set(6, 6);
                     animation.play("run");
+            case 'lil eggie':
+                    loadGraphic('assets/images/lilEggie.png', true, 56, 34);
+                    animation.add("run", [0, 1, 2, 3, 4, 5], 60, true);
+                    screenCenter(Y);
+                    // sanic.screenCenter(X);
+                    y += 50;
+                    x -= width * 2;
+                    scale.set(3, 3);
+                    animation.play("run");
+                    flipX = true;
         }
         antialiasing = false;
     }
