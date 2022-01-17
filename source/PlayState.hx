@@ -51,6 +51,9 @@ class PlayState extends FlxState
 		// preventing the ground from disappearing
 		bg.animation.addByPrefix("bg", "bg moving instance 1", 30, true);
 		bg.animation.play("bg");
+		if (stageList == 'FB'){
+			bg.x -= 250;
+		}
 		add(bg);
 
 		ground = new FlxSprite();
@@ -175,6 +178,9 @@ class PlayState extends FlxState
 
 		bg = new FlxSprite();
 		bg.x = -4096;
+		if (stageList == 'FB'){
+			bg.x -= 250;
+		}
 		bg.y = 150;
 		bg.frames = AssetPaths.getSparrowAtlas('bg_' + stageList + 'Z');
 		bg.scale.set(2, 2);

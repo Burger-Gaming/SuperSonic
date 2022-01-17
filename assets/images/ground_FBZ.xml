@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="ground_ghz.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="moving ground0000" x="10" y="10" width="6144" height="570" frameX="-4864" frameY="0" frameWidth="11008" frameHeight="570"/>
+	<SubTexture name="moving ground0001" x="10" y="10" width="6144" height="570" frameX="-4608" frameY="0" frameWidth="11008" frameHeight="570"/>
+	<SubTexture name="moving ground0002" x="10" y="10" width="6144" height="570" frameX="-4352" frameY="0" frameWidth="11008" frameHeight="570"/>
+	<SubTexture name="moving ground0003" x="10" y="10" width="6144" height="570" frameX="-4096" frameY="0" frameWidth="11008" frameHeight="570"/>
+	<SubTexture name="moving ground0004" x="10" y="10" width="6144" height="570" frameX="-3840" frameY="0" frameWidth="11008" frameHeight="570"/>
+	<SubTexture name="moving ground0005" x="10" y="10" width="6144" height="570" frameX="-3584" frameY="0" frameWidth="11008" frameHeight="570"/>
+	<SubTexture name="moving ground0006" x="10" y="10" width="6144" height="570" frameX="-3328" frameY="0" frameWidth="11008" frameHeight="570"/>
+	<SubTexture name="moving ground0007" x="10" y="10" width="6144" height="570" frameX="-3072" frameY="0" frameWidth="11008" frameHeight="570"/>
+	<SubTexture name="moving ground0008" x="10" y="10" width="6144" height="570" frameX="-2816" frameY="0" frameWidth="11008" frameHeight="570"/>
+	<SubTexture name="moving ground0009" x="10" y="10" width="6144" height="570" frameX="-2561" frameY="0" frameWidth="11008" frameHeight="570"/>
+	<SubTexture name="moving ground0010" x="10" y="10" width="6144" height="570" frameX="-2304" frameY="0" frameWidth="11008" frameHeight="570"/>
+	<SubTexture name="moving ground0011" x="10" y="10" width="6144" height="570" frameX="-2048" frameY="0" frameWidth="11008" frameHeight="570"/>
+	<SubTexture name="moving ground0012" x="10" y="10" width="6144" height="570" frameX="-1792" frameY="0" frameWidth="11008" frameHeight="570"/>
+	<SubTexture name="moving ground0013" x="10" y="10" width="6144" height="570" frameX="-1537" frameY="0" frameWidth="11008" frameHeight="570"/>
+	<SubTexture name="moving ground0014" x="10" y="10" width="6144" height="570" frameX="-1280" frameY="0" frameWidth="11008" frameHeight="570"/>
+	<SubTexture name="moving ground0015" x="10" y="10" width="6144" height="570" frameX="-1024" frameY="0" frameWidth="11008" frameHeight="570"/>
+	<SubTexture name="moving ground0016" x="10" y="10" width="6144" height="570" frameX="-768" frameY="0" frameWidth="11008" frameHeight="570"/>
+	<SubTexture name="moving ground0017" x="10" y="10" width="6144" height="570" frameX="-513" frameY="0" frameWidth="11008" frameHeight="570"/>
+	<SubTexture name="moving ground0018" x="10" y="10" width="6144" height="570" frameX="-256" frameY="0" frameWidth="11008" frameHeight="570"/>
+	<SubTexture name="moving ground0019" x="10" y="10" width="6144" height="570" frameX="0" frameY="0" frameWidth="11008" frameHeight="570"/>
+</TextureAtlas>
