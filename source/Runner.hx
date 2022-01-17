@@ -81,6 +81,15 @@ class Runner extends FlxSprite{
                     x -= width * 2;
                     scale.set(6, 6);
                     animation.play("run");
+            case 'heavy rider':
+                    loadGraphic('assets/images/HBHdriver.png', true, 53, 81);
+                    animation.add("run", [0, 1, 2, 3, 4, 5, 6], 60, true);
+                    screenCenter(Y);
+                    // sanic.screenCenter(X);
+                    y -= 120;
+                    x -= width * 2;
+                    scale.set(6, 6);
+                    animation.play("run");
         }
         antialiasing = false;
     }
