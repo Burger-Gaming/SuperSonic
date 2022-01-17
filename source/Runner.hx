@@ -68,7 +68,7 @@ class Runner extends FlxSprite{
                     animation.add("run", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 30, true);
                     // sanic.screenCenter(X);
                     x -= width * 2;
-                    y = 300;
+                    y += 300;
                     scale.set(6, 6);
                     animation.play("run");
 

@@ -127,7 +127,7 @@ class PlayState extends FlxState
 		remove(sanic);
 		sanic = new Runner(0, 0, FlxG.save.data.character);
 		sanic.screenCenter(X);
-		sanic.screenCenter(Y);
+		//sanic.screenCenter(Y);
 		add(sanic);
 	}
 
