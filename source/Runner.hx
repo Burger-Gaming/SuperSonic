@@ -35,6 +35,7 @@ class Runner extends FlxSprite{
 		        x -= width * 2;
 		        scale.set(6, 6);
 		        animation.play("run");
+			
             case 'mighty':
                 loadGraphic('assets/images/mightyRun.png', true, 35, 33);
 		        animation.add("run", [0, 1, 2, 3, 4, 5, 6, 7], 60, true);
@@ -43,6 +44,7 @@ class Runner extends FlxSprite{
 		        x -= width * 2;
 		        scale.set(6, 6);
 		        animation.play("run");
+			
             case 'ray':
                 loadGraphic('assets/images/rayRun.png', true, 43, 38);
                 animation.add("run", [0, 1, 2, 3, 4, 5, 6, 7], 60, true);
@@ -51,6 +53,15 @@ class Runner extends FlxSprite{
                 x -= width * 2;
                 scale.set(6, 6);
                 animation.play("run");
+			
+	    case 'super sonic':
+                 loadGraphic('assets/images/superSonicRun.png', true, 36, 35);
+                 animation.add("run", [0, 1, 2, 3], 60, true);
+                 screenCenter(Y);
+                 // sanic.screenCenter(X);
+                 x -= width * 2;
+                 scale.set(6, 6);
+                 animation.play("run");
         }
         antialiasing = false;
     }
