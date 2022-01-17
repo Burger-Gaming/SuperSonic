@@ -111,7 +111,7 @@ class PlayState extends FlxState
 				FlxG.save.data.character = 'mighty';
 			case 4:
 				FlxG.save.data.character = 'ray';
-			case 4:
+			case 5:
 				FlxG.save.data.character = 'super sonic';
 		}
 		trace(FlxG.save.data.characterNum);
