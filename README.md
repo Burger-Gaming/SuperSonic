@@ -28,3 +28,7 @@ Only RAM requirement: 100mb (it used to be a gigabyte 🤡).
 
 - All tracks added.
 - Stage system implemented.
+
+# Disclaimer 
+
+- This project is not endorsed by SEGA or Sonic Team.
