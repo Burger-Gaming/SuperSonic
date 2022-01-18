@@ -4,6 +4,8 @@ Only RAM requirement: 100mb (it used to be a gigabyte 🤡).
 
 ![New_Project_30](https://user-images.githubusercontent.com/74748468/149877564-e8daee4b-6ae2-4d06-9ae4-c4a91305da04.png)  (Logo credit to Soulslimm.)
 
+# Images
+
 ![image](https://user-images.githubusercontent.com/69328615/149852169-3cc3989c-22f3-4899-95ef-72f7c6185fff.png)
 ![image](https://user-images.githubusercontent.com/69328615/149852223-09d53725-af71-48d8-a2e9-e2823c3e5f17.png)
 ![image](https://user-images.githubusercontent.com/69328615/149852242-a67b6e22-2920-4795-b035-0bfe24a222a7.png)
