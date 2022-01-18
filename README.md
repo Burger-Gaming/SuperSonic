@@ -18,6 +18,7 @@ Only RAM requirement: 100mb (it used to be a gigabyte 🤡).
 
 - BPM system (Most likely gonna change the running speed of the chosen character depending on the BPM.) This is on hold.
 - Finish adding all characters (add as many characters as we can).
+- Fix partial black screen bug.
 
 # Completed
 
