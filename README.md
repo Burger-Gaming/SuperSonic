@@ -2,7 +2,8 @@
 Sonic Mania music player.
 Only RAM requirement: 100mb (it used to be a gigabyte 🤡, unless if you're on mac. [it still is](https://media.discordapp.net/attachments/932512876697100358/933058088880201748/Screen_Shot_2022-01-18_at_12.59.10_PM.png?width=570&height=51)).
 
-![New_Project_30](https://user-images.githubusercontent.com/74748468/149877564-e8daee4b-6ae2-4d06-9ae4-c4a91305da04.png)  (Logo credit to Soulslimm.)
+![SuperSonic](https://user-images.githubusercontent.com/69328615/150015249-e353fd7c-927e-43cf-9c1b-b8a633de4f6e.png)
+(Logo credit to Soulslimm.)
 
 # Images
 
