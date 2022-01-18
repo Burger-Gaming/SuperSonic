@@ -92,7 +92,7 @@ class PlayState extends FlxState
 
 		songName = pathList[FlxG.save.data.stage][2];
 		songText = new FlxText();
-		songText.setFormat('assets/fonts/sonic-hud-font.ttf', 32, 0xFF0000FF, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, 0xFFFFFF00, true);
+		songText.setFormat('assets/fonts/sonic-hud-font.ttf', 32, 0xFFFFFF00, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, 0xFF0000FF, true);
 		//songText.screenCenter(X);
 		//songText.x = FlxG.width / 2 - songText.width / 2;
 		songText.text = pathList[FlxG.save.data.stage][2].toLowerCase();
@@ -241,7 +241,7 @@ class PlayState extends FlxState
 		add(sanic);
 
 		songText = new FlxText();
-		songText.setFormat('assets/fonts/sonic-hud-font.ttf', 32, 0xFF0000FF, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, 0xFFFFFF00, true);
+		songText.setFormat('assets/fonts/sonic-hud-font.ttf', 32, 0xFFFFFF00, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, 0xFF0000FF, true);
 		//songText.screenCenter(X);
 		//songText.x = FlxG.width / 2 - songText.width / 2;
 		songText.text = pathList[FlxG.save.data.stage][2].toLowerCase();
