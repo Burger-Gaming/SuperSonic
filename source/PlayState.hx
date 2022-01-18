@@ -57,47 +57,7 @@ class PlayState extends FlxState
 		FlxG.autoPause = false;
 		FlxG.mouse.visible = false;
 
-		bg = new FlxSprite();
-		bg.x = -4096;
-		if (stageList == 'FB'){
-			bg.x -= 250;
-		}
-		if (stageList == 'PG'){
-			bg.y -= 250;
-		}
-		bg.y = 150;
-		bg.frames = AssetPaths.getSparrowAtlas('bg_' + stageList + 'Z');
-		bg.scale.set(2, 2);
-		/*if (stageList == 'SP'){
-			bg.y -= 25;
-		}*/
-		//ground.animation.addByPrefix("ground", "moving ground", 30, true);
-		// preventing the ground from disappearing
-		bg.animation.addByPrefix("bg", "bg moving instance 1", 30, true);
-		bg.animation.play("bg");
-		add(bg);
-		ground = new FlxSprite();
-		ground.x = -2432;
-		ground.y = 435;
-		ground.frames = AssetPaths.getSparrowAtlas('ground_' + stageList + 'Z');
-		//ground.animation.addByPrefix("ground", "moving ground", 30, true);
-		// preventing the ground from disappearing
-		ground.animation.addByIndices("ground", "moving ground", [10, 11, 12, 13, 14, 15, 16, 17, 18], "", 30, true);
-		ground.animation.play("ground");
-		add(ground);
-		
-		sanic = new Runner(0, 435, FlxG.save.data.character);
-		sanic.screenCenter(X);
-		add(sanic);
-
-		songName = pathList[FlxG.save.data.stage][2];
-		songText = new FlxText();
-		songText.setFormat('assets/fonts/sonic-hud-font.ttf', 32, 0xFFFFFF00, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, 0xFF0000FF, true);
-		//songText.screenCenter(X);
-		//songText.x = FlxG.width / 2 - songText.width / 2;
-		songText.text = pathList[FlxG.save.data.stage][2].toLowerCase();
-		songText.y = 0;
-		add(songText);
+		addStage();
 
 
 		/*for (i in 0...pathList.length){
@@ -204,8 +164,13 @@ class PlayState extends FlxState
 		trace(stageList);
 		bg.destroy();
 		ground.destroy();
+		sanic.destroy();
 		songText.destroy();
 
+		addStage();
+	}
+
+	public function addStage(){
 		bg = new FlxSprite();
 		bg.x = -4096;
 		if (stageList == 'FB'){
@@ -235,7 +200,6 @@ class PlayState extends FlxState
 		ground.animation.play("ground");
 		add(ground);
 
-		sanic.destroy();
 		sanic = new Runner(0, 435, FlxG.save.data.character);
 		sanic.screenCenter(X);
 		add(sanic);
