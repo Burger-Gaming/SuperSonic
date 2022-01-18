@@ -33,6 +33,7 @@
 	<source path="source" />
 	<assets path="assets" />
 	<assets path='readme.txt' />
+	<assets path="assets/fonts" embed='true'/>
 
 	<!-- _______________________________ Libraries ______________________________ -->
 

@@ -8,6 +8,7 @@ import flixel.tweens.FlxEase;
 import flixel.graphics.frames.FlxAtlasFrames;
 import lime.utils.Assets;
 import flixel.group.FlxSpriteGroup;
+import flixel.text.FlxText;
 
 class PlayState extends FlxState
 {
@@ -18,33 +19,36 @@ class PlayState extends FlxState
 	var fan:FlxSprite;
 	public var stageList = pathList[FlxG.save.data.stage][1];
 
-	public static var pathList:Array<Dynamic> = [ // ogg file, which zone it is
-		['Act1.ogg', 'GH'], // Green Hill
-		['Act2.ogg', 'GH'],
-		['Act1.ogg', 'CP'], // Chemical Plant
-		['Act2.ogg', 'CP'],
-		['Act1.ogg', 'SP'], // Studiopolis
-		['Act2.ogg', 'SP'],
-		['Act1.ogg', 'FB'], // Flying Battery
-		['Act2.ogg', 'FB'],
-		['Act1.ogg', 'PG'], // Press Garden
-		['Act2.ogg', 'PG'],
-		['Act1.ogg', 'SS'], // Stardust Speedway
-		['Act2.ogg', 'SS'],
-		['Act1.ogg', 'HC'], // Hydrocity
-		['Act2.ogg', 'HC'],
-		['Act1.ogg', 'MS'], // Mirage Saloon
-	   ['Act1K.ogg', 'MS'], // knuckles variant of act 1 mirage saloon
-	    ['Act2.ogg', 'MS'],
-		['Act1.ogg', 'OO'], // Oil Ocean
-		['Act2.ogg', 'OO'],
-		['Act1.ogg', 'LR'], // Lava Reef
-		['Act2.ogg', 'LR'],
-		['Act1.ogg', 'MM'], // Metallic Madness
-		['Act2.ogg', 'MM'],
-		['Act1.ogg', 'TM'], // Titanic Monarch
-		['Act2.ogg', 'TM'],
-  ['EggReverie.ogg', 'TM'] // Egg Reverie, stage is complicated to add so i kept it in TM
+	public var songName = pathList[FlxG.save.data.stage][2];
+	var songText:FlxText;
+
+	public static var pathList:Array<Dynamic> = [ // ogg file, which zone it is, song name
+		['Act1.ogg', 'GH', 'Green Hill Zone - Act 1'], // Green Hill
+		['Act2.ogg', 'GH', 'Green Hill Zone - Act 2'],
+		['Act1.ogg', 'CP', 'Chemical Plant Zone - Act 1'], // Chemical Plant
+		['Act2.ogg', 'CP', 'Chemical Plant Zone - Act 2'],
+		['Act1.ogg', 'SP', 'Studiopolis Zone - Act 1'], // Studiopolis
+		['Act2.ogg', 'SP', 'Studiopolis Zone - Act 2'],
+		['Act1.ogg', 'FB', 'Flying Battery Zone - Act 1'], // Flying Battery
+		['Act2.ogg', 'FB', 'Flying Battery Zone - Act 2'],
+		['Act1.ogg', 'PG', 'Press Garden Zone - Act 1'], // Press Garden
+		['Act2.ogg', 'PG', 'Press Garden Zone - Act 2'],
+		['Act1.ogg', 'SS', 'Stardust Speedway Zone - Act 1'], // Stardust Speedway
+		['Act2.ogg', 'SS', 'Stardust Speedway Zone - Act 2'],
+		['Act1.ogg', 'HC', 'Hydrocity Zone - Act 1'], // Hydrocity
+		['Act2.ogg', 'HC', 'Hydrocity Zone - Act 2'],
+		['Act1.ogg', 'MS', 'Mirage Saloon Zone - Act 1'], // Mirage Saloon
+	   ['Act1K.ogg', 'MS', 'Mirage Saloon Zone - Act 1 (Knuckles)'], // knuckles variant of act 1 mirage saloon
+	    ['Act2.ogg', 'MS', 'Mirage Saloon Zone - Act 2'],
+		['Act1.ogg', 'OO', 'Oil Ocean Zone - Act 1'], // Oil Ocean
+		['Act2.ogg', 'OO', 'Oil Ocean Zone - Act 2'],
+		['Act1.ogg', 'LR', 'Lava Reef Zone - Act 1'], // Lava Reef
+		['Act2.ogg', 'LR', 'Lava Reef Zone - Act 2'],
+		['Act1.ogg', 'MM', 'Metallic Madness Zone - Act 1'], // Metallic Madness
+		['Act2.ogg', 'MM', 'Metallic Madness Zone - Act 2'],
+		['Act1.ogg', 'TM', 'Titanic Monarch Zone - Act 1'], // Titanic Monarch
+		['Act2.ogg', 'TM', 'Titanic Monarch Zone - Act 2'],
+  ['EggReverie.ogg', 'TM', 'Egg Reverie Zone'] // Egg Reverie, stage is complicated to add so i kept it in TM
 	];
 
 	override public function create()
@@ -86,6 +90,14 @@ class PlayState extends FlxState
 		sanic.screenCenter(X);
 		add(sanic);
 
+		songName = pathList[FlxG.save.data.stage][2];
+		songText = new FlxText();
+		songText.setFormat('assets/fonts/sonic-hud-font.ttf', 32, 0xFF0000FF, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, 0xFFFFFF00, true);
+		//songText.screenCenter(X);
+		//songText.x = FlxG.width / 2 - songText.width / 2;
+		songText.text = pathList[FlxG.save.data.stage][2].toLowerCase();
+		songText.y = 0;
+		add(songText);
 
 
 		/*for (i in 0...pathList.length){
@@ -192,6 +204,7 @@ class PlayState extends FlxState
 		trace(stageList);
 		bg.destroy();
 		ground.destroy();
+		songText.destroy();
 
 		bg = new FlxSprite();
 		bg.x = -4096;
@@ -226,5 +239,13 @@ class PlayState extends FlxState
 		sanic = new Runner(0, 435, FlxG.save.data.character);
 		sanic.screenCenter(X);
 		add(sanic);
+
+		songText = new FlxText();
+		songText.setFormat('assets/fonts/sonic-hud-font.ttf', 32, 0xFF0000FF, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, 0xFFFFFF00, true);
+		//songText.screenCenter(X);
+		//songText.x = FlxG.width / 2 - songText.width / 2;
+		songText.text = pathList[FlxG.save.data.stage][2].toLowerCase();
+		songText.y = 0;
+		add(songText);
 	}
 }
