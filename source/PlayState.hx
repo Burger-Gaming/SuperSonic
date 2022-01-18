@@ -96,8 +96,8 @@ class PlayState extends FlxState
 	public function switchChar(change:Int = 1){
 		FlxG.save.data.characterNum += change;
 
-		if (FlxG.save.data.characterNum >=  9){
-			FlxG.save.data.characterNum = 9;
+		if (FlxG.save.data.characterNum >=  14){
+			FlxG.save.data.characterNum = 14;
 			//FlxG.save.data.character = '';
 		}
 		if (FlxG.save.data.characterNum <= 0){
@@ -107,23 +107,33 @@ class PlayState extends FlxState
 		switch(FlxG.save.data.characterNum){
 			case 0:
 				FlxG.save.data.character = 'sonic';
-			case 1:
-				FlxG.save.data.character = 'tails';
+			case 1: 
+				FlxG.save.data.character = 'chibi sonic';
 			case 2:
-				FlxG.save.data.character = 'knuckles';
+				FlxG.save.data.character = 'tails';
 			case 3:
-				FlxG.save.data.character = 'mighty';
+				FlxG.save.data.character = 'chibi tails';
 			case 4:
-				FlxG.save.data.character = 'ray';
+				FlxG.save.data.character = 'knuckles';
 			case 5:
-				FlxG.save.data.character = 'super sonic';
+				FlxG.save.data.character = 'chibi knuckles';
 			case 6:
-				FlxG.save.data.character = 'eggman';
+				FlxG.save.data.character = 'mighty';
 			case 7:
-				FlxG.save.data.character = 'metal sonic';
+				FlxG.save.data.character = 'chibi mighty';
 			case 8:
-				FlxG.save.data.character = 'heavy rider';
+				FlxG.save.data.character = 'ray';
 			case 9:
+				FlxG.save.data.character = 'chibi ray';
+			case 10:
+				FlxG.save.data.character = 'super sonic';
+			case 11:
+				FlxG.save.data.character = 'eggman';
+			case 12:
+				FlxG.save.data.character = 'metal sonic';
+			case 13:
+				FlxG.save.data.character = 'heavy rider';
+			case 14:
 				FlxG.save.data.character = 'lil eggie';
 		}
 		trace(FlxG.save.data.characterNum);
