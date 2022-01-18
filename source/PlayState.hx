@@ -19,25 +19,29 @@ class PlayState extends FlxState
 	public var stageList = pathList[FlxG.save.data.stage][1];
 
 	public static var pathList:Array<Dynamic> = [ // ogg file, which zone it is
-		['Act1.ogg', 'GH'],
+		['Act1.ogg', 'GH'], // Green Hill
 		['Act2.ogg', 'GH'],
-		['Act1.ogg', 'CP'],
+		['Act1.ogg', 'CP'], // Chemical Plant
 		['Act2.ogg', 'CP'],
-		['Act1.ogg', 'SP'],
+		['Act1.ogg', 'SP'], // Studiopolis
 		['Act2.ogg', 'SP'],
-		['Act1.ogg', 'FB'],
+		['Act1.ogg', 'FB'], // Flying Battery
 		['Act2.ogg', 'FB'],
-		['Act1.ogg', 'PG'],
+		['Act1.ogg', 'PG'], // Press Garden
 		['Act2.ogg', 'PG'],
-		['Act1.ogg', 'SS'],
+		['Act1.ogg', 'SS'], // Stardust Speedway
 		['Act2.ogg', 'SS'],
-		['Act1.ogg', 'HC'],
+		['Act1.ogg', 'HC'], // Hydrocity
 		['Act2.ogg', 'HC'],
-		['Act1.ogg', 'MS'],
-	   ['Act1K.ogg', 'MS'],
+		['Act1.ogg', 'MS'], // Mirage Saloon
+	   ['Act1K.ogg', 'MS'], // knuckles variant of act 1 mirage saloon
 	    ['Act2.ogg', 'MS'],
-		['Act1.ogg', 'OO'],
-		['Act2.ogg', 'OO']
+		['Act1.ogg', 'OO'], // Oil Ocean
+		['Act2.ogg', 'OO'],
+		['Act1.ogg', 'LR'], // Lava Reef
+		['Act2.ogg', 'LR'],
+		['Act1.ogg', 'MM'], // Metallic Madness
+		['Act2.ogg', 'MM']
 	];
 
 	override public function create()
@@ -179,8 +183,8 @@ class PlayState extends FlxState
 		if (FlxG.save.data.song < 0){
 			FlxG.save.data.song = 0;
 		}
-		if (FlxG.save.data.song > 18){
-			FlxG.save.data.song = 18;
+		if (FlxG.save.data.song > 22){
+			FlxG.save.data.song = 22;
 		}
 		
 		if (FlxG.sound.music != null){
@@ -195,8 +199,8 @@ class PlayState extends FlxState
 		if (FlxG.save.data.stage <= 0){
 			FlxG.save.data.stage = 0;
 		}
-		if (FlxG.save.data.stage >= 18){
-			FlxG.save.data.stage = 18;
+		if (FlxG.save.data.stage >= 22){
+			FlxG.save.data.stage = 22;
 		}
 		stageList = pathList[FlxG.save.data.stage][1];
 
