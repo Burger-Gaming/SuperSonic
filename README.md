@@ -17,6 +17,9 @@ Only RAM requirement: 100mb (it used to be a gigabyte 🤡).
 # To do
 
 - BPM system (Most likely gonna change the running speed of the chosen character depending on the BPM.) This is on hold.
-- Finish adding all tracks.
 - Finish adding all characters (add as many characters as we can).
-- Add stage changing system. (maybe)
+
+# Completed
+
+- All tracks added.
+- Stage system implemented.
