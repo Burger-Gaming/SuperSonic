@@ -43,7 +43,8 @@ class PlayState extends FlxState
 		['Act1.ogg', 'MM'], // Metallic Madness
 		['Act2.ogg', 'MM'],
 		['Act1.ogg', 'TM'], // Titanic Monarch
-		['Act2.ogg', 'TM']
+		['Act2.ogg', 'TM'],
+  ['EggReverie.ogg', 'TM'] // Egg Reverie, stage is complicated to add so i kept it in TM
 	];
 
 	override public function create()
@@ -167,8 +168,8 @@ class PlayState extends FlxState
 		if (FlxG.save.data.song < 0){
 			FlxG.save.data.song = 0;
 		}
-		if (FlxG.save.data.song > 24){
-			FlxG.save.data.song = 24;
+		if (FlxG.save.data.song > 25){
+			FlxG.save.data.song = 25;
 		}
 		
 		if (FlxG.sound.music != null){
@@ -183,8 +184,8 @@ class PlayState extends FlxState
 		if (FlxG.save.data.stage <= 0){
 			FlxG.save.data.stage = 0;
 		}
-		if (FlxG.save.data.stage >= 24){
-			FlxG.save.data.stage = 24;
+		if (FlxG.save.data.stage >= 25){
+			FlxG.save.data.stage = 25;
 		}
 		stageList = pathList[FlxG.save.data.stage][1];
 
