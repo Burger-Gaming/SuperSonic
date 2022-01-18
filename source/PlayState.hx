@@ -41,7 +41,9 @@ class PlayState extends FlxState
 		['Act1.ogg', 'LR'], // Lava Reef
 		['Act2.ogg', 'LR'],
 		['Act1.ogg', 'MM'], // Metallic Madness
-		['Act2.ogg', 'MM']
+		['Act2.ogg', 'MM'],
+		['Act1.ogg', 'TM'], // Titanic Monarch
+		['Act2.ogg', 'TM']
 	];
 
 	override public function create()
@@ -66,10 +68,8 @@ class PlayState extends FlxState
 		}*/
 		//ground.animation.addByPrefix("ground", "moving ground", 30, true);
 		// preventing the ground from disappearing
-		if (stageList != 'OO'){
 		bg.animation.addByPrefix("bg", "bg moving instance 1", 30, true);
 		bg.animation.play("bg");
-		}
 		add(bg);
 		ground = new FlxSprite();
 		ground.x = -2432;
@@ -77,25 +77,9 @@ class PlayState extends FlxState
 		ground.frames = AssetPaths.getSparrowAtlas('ground_' + stageList + 'Z');
 		//ground.animation.addByPrefix("ground", "moving ground", 30, true);
 		// preventing the ground from disappearing
-		if (stageList != 'OO'){
-			ground.animation.addByIndices("ground", "moving ground", [10, 11, 12, 13, 14, 15, 16, 17, 18], "", 30, true);
-			ground.animation.play("ground");
-		} else{
-			ground.animation.addByIndices("ground", "moving ground", [14], "", 30, true);
-			ground.animation.play("ground");
-		}
+		ground.animation.addByIndices("ground", "moving ground", [10, 11, 12, 13, 14, 15, 16, 17, 18], "", 30, true);
+		ground.animation.play("ground");
 		add(ground);
-
-		if (stageList == 'OO'){
-			fan = new FlxSprite().loadGraphic('assets/images/fan.png', true, 24, 32);
-			fan.animation.add('blow', [0, 1, 2, 3], 60, true);
-			fan.screenCenter(Y);
-			fan.screenCenter(X);
-			fan.x += 300;
-			fan.scale.set(6, 6);
-			fan.animation.play('blow');
-			add(fan);
-		}
 		
 		sanic = new Runner(0, 435, FlxG.save.data.character);
 		sanic.screenCenter(X);
@@ -183,8 +167,8 @@ class PlayState extends FlxState
 		if (FlxG.save.data.song < 0){
 			FlxG.save.data.song = 0;
 		}
-		if (FlxG.save.data.song > 22){
-			FlxG.save.data.song = 22;
+		if (FlxG.save.data.song > 24){
+			FlxG.save.data.song = 24;
 		}
 		
 		if (FlxG.sound.music != null){
@@ -199,17 +183,14 @@ class PlayState extends FlxState
 		if (FlxG.save.data.stage <= 0){
 			FlxG.save.data.stage = 0;
 		}
-		if (FlxG.save.data.stage >= 22){
-			FlxG.save.data.stage = 22;
+		if (FlxG.save.data.stage >= 24){
+			FlxG.save.data.stage = 24;
 		}
 		stageList = pathList[FlxG.save.data.stage][1];
 
 		trace(stageList);
 		bg.destroy();
 		ground.destroy();
-		if (stageList == 'OO'){
-			fan.destroy();
-		}
 
 		bg = new FlxSprite();
 		bg.x = -4096;
@@ -227,10 +208,8 @@ class PlayState extends FlxState
 		}*/
 		//ground.animation.addByPrefix("ground", "moving ground", 30, true);
 		// preventing the ground from disappearing
-		if (stageList != 'OO'){
 		bg.animation.addByPrefix("bg", "bg moving instance 1", 30, true);
 		bg.animation.play("bg");
-		}
 		add(bg);
 		ground = new FlxSprite();
 		ground.x = -2432;
@@ -238,25 +217,9 @@ class PlayState extends FlxState
 		ground.frames = AssetPaths.getSparrowAtlas('ground_' + stageList + 'Z');
 		//ground.animation.addByPrefix("ground", "moving ground", 30, true);
 		// preventing the ground from disappearing
-		if (stageList != 'OO'){
-			ground.animation.addByIndices("ground", "moving ground", [10, 11, 12, 13, 14, 15, 16, 17, 18], "", 30, true);
-			ground.animation.play("ground");
-		} else{
-			ground.animation.addByIndices("ground", "moving ground", [14], "", 30, true);
-			ground.animation.play("ground");
-		}
+		ground.animation.addByIndices("ground", "moving ground", [10, 11, 12, 13, 14, 15, 16, 17, 18], "", 30, true);
+		ground.animation.play("ground");
 		add(ground);
-
-		if (stageList == 'OO'){
-			fan = new FlxSprite().loadGraphic('assets/images/fan.png', true, 24, 32);
-			fan.animation.add('blow', [0, 1, 2, 3], 60, true);
-			fan.screenCenter(Y);
-			fan.screenCenter(X);
-			fan.x += 300;
-			fan.scale.set(6, 6);
-			fan.animation.play('blow');
-			add(fan);
-		}
 
 		sanic.destroy();
 		sanic = new Runner(0, 435, FlxG.save.data.character);
