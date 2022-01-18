@@ -7,3 +7,4 @@ Arrow Keys - Left & Right: Switch song.
 Programmers:
 - SmashingGoomba
 - Acrio
+- Soulslimm (Logo Designer as well)
