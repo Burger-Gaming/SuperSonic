@@ -21,6 +21,7 @@ class PlayState extends FlxState
 
 	public var songName = pathList[FlxG.save.data.stage][2];
 	var songText:FlxText;
+	var charText:FlxText;
 
 	public static var pathList:Array<Dynamic> = [ // ogg file, which zone it is, song name
 		['Act1.ogg', 'GH', 'Green Hill Zone - Act 1'], // Green Hill
@@ -137,11 +138,18 @@ class PlayState extends FlxState
 				FlxG.save.data.character = 'lil eggie';
 		}
 		trace(FlxG.save.data.characterNum);
-		remove(sanic);
+		sanic.destroy();
 		sanic = new Runner(0, 435, FlxG.save.data.character);
 		sanic.screenCenter(X);
 		//sanic.screenCenter(Y);
 		add(sanic);
+
+		charText.destroy();
+		charText = new FlxText();
+		charText.setFormat('assets/fonts/sonic-hud-font.ttf', 32, 0xFFFFFF00, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, 0xFF0000FF, true);
+		charText.text = 'current character: ' + FlxG.save.data.character;
+		charText.y = FlxG.height - charText.height;
+		add(charText);
 	}
 
 	public function switchSong(change:Int = 1){
@@ -176,6 +184,7 @@ class PlayState extends FlxState
 		ground.destroy();
 		sanic.destroy();
 		songText.destroy();
+		charText.destroy();
 
 		addStage();
 	}
@@ -221,5 +230,11 @@ class PlayState extends FlxState
 		songText.text = pathList[FlxG.save.data.stage][2].toLowerCase();
 		songText.y = 0;
 		add(songText);
+
+		charText = new FlxText();
+		charText.setFormat('assets/fonts/sonic-hud-font.ttf', 32, 0xFFFFFF00, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, 0xFF0000FF, true);
+		charText.text = 'current character: ' + FlxG.save.data.character;
+		charText.y = FlxG.height - charText.height;
+		add(charText);
 	}
 }
