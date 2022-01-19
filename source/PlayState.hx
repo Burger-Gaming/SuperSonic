@@ -1,5 +1,4 @@
 package;
-
 import flixel.FlxState;
 import flixel.FlxG;
 import flixel.FlxSprite;
@@ -49,7 +48,8 @@ class PlayState extends FlxState
 		['Act2.ogg', 'MM', 'Metallic Madness Zone - Act 2'],
 		['Act1.ogg', 'TM', 'Titanic Monarch Zone - Act 1'], // Titanic Monarch
 		['Act2.ogg', 'TM', 'Titanic Monarch Zone - Act 2'],
-  ['EggReverie.ogg', 'TM', 'Egg Reverie Zone'] // Egg Reverie, stage is complicated to add so i kept it in TM
+  ['EggReverie.ogg', 'TM', 'Egg Reverie Zone'], // Egg Reverie, stage is complicated to add so i kept it in TM
+		['Act.ogg',	 'AI', 'Angel Island Zone'] // sucks that they didnt make this a full zone, just DLC
 	];
 
 	override public function create()
@@ -63,15 +63,16 @@ class PlayState extends FlxState
 		/*for (i in 0...pathList.length){
 			FlxG.sound.cache('assets/music/' + pathList[i][1] + "Z/" + pathList[i][1] + pathList[i][0]);
 		}*/
-
 		if (FlxG.sound.music == null){
 			FlxG.sound.playMusic('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0], 1, true);
 		}
+
 		trace('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0]);
 	}
 
 	override public function update(elapsed:Float)
 	{
+
 		super.update(elapsed);
 		/*for (i in 0...list.length){
 			FlxG.sound.music.play(list[0][1]);
@@ -157,8 +158,8 @@ class PlayState extends FlxState
 		if (FlxG.save.data.song < 0){
 			FlxG.save.data.song = 0;
 		}
-		if (FlxG.save.data.song > 25){
-			FlxG.save.data.song = 25;
+		if (FlxG.save.data.song > 26){
+			FlxG.save.data.song = 26;
 		}
 		
 		if (FlxG.sound.music != null){
@@ -173,8 +174,8 @@ class PlayState extends FlxState
 		if (FlxG.save.data.stage <= 0){
 			FlxG.save.data.stage = 0;
 		}
-		if (FlxG.save.data.stage >= 25){
-			FlxG.save.data.stage = 25;
+		if (FlxG.save.data.stage >= 26){
+			FlxG.save.data.stage = 26;
 		}
 		stageList = pathList[FlxG.save.data.stage][1];
 
@@ -197,7 +198,7 @@ class PlayState extends FlxState
 				stageLocation = -4096;
 			case 'CP' | 'MS':
 				stageLocation = -1536;
-			case 'SP' | 'FB' | 'PG' | 'HC' | 'OO' | 'LR' | 'TM':
+			case 'SP' | 'FB' | 'PG' | 'HC' | 'OO' | 'LR' | 'TM' | 'AI':
 				stageLocation = -2048;
 			case 'MM':
 				stageLocation = -2034;
@@ -263,5 +264,8 @@ class PlayState extends FlxState
 		charText.text = 'current character: ' + FlxG.save.data.character;
 		charText.y = FlxG.height - charText.height;
 		add(charText);
+	}
+	public function test(){
+		
 	}
 }
