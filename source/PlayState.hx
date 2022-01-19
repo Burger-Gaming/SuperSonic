@@ -141,6 +141,9 @@ class PlayState extends FlxState
 		sanic.destroy();
 		sanic = new Runner(0, 435, FlxG.save.data.character);
 		sanic.screenCenter(X);
+		if (stageList == 'AI'){
+			sanic.y += 30;
+		}
 		//sanic.screenCenter(Y);
 		add(sanic);
 
@@ -249,6 +252,9 @@ class PlayState extends FlxState
 
 		sanic = new Runner(0, 435, FlxG.save.data.character);
 		sanic.screenCenter(X);
+		if (stageList == 'AI'){ // adjusting y level for angel island
+			sanic.y += 30;
+		}
 		add(sanic);
 
 		songText = new FlxText();
