@@ -1,22 +1,25 @@
 # SuperSonic
 Sonic Mania music player.
-Only RAM requirement: 100mb (it used to be a gigabyte 🤡, unless if you're on mac. [it still is](https://media.discordapp.net/attachments/932512876697100358/933058088880201748/Screen_Shot_2022-01-18_at_12.59.10_PM.png?width=570&height=51)).
+Only RAM requirement: 100mb (it used to be a gigabyte 🤡, though sometimes [it depends on your ram speed](https://media.discordapp.net/attachments/932512876697100358/933101703434215524/Screen_Shot_2022-01-18_at_3.52.42_PM.png?width=559&height=20)).
 
-![New_Project_30](https://user-images.githubusercontent.com/74748468/149877564-e8daee4b-6ae2-4d06-9ae4-c4a91305da04.png)  (Logo credit to Soulslimm.)
+![SuperSonic](https://user-images.githubusercontent.com/69328615/150015249-e353fd7c-927e-43cf-9c1b-b8a633de4f6e.png)
+(Logo credit to Soulslimm.)
 
 # Images
 
-![image](https://user-images.githubusercontent.com/69328615/149852169-3cc3989c-22f3-4899-95ef-72f7c6185fff.png)
-![image](https://user-images.githubusercontent.com/69328615/149852223-09d53725-af71-48d8-a2e9-e2823c3e5f17.png)
-![image](https://user-images.githubusercontent.com/69328615/149852242-a67b6e22-2920-4795-b035-0bfe24a222a7.png)
-![image](https://user-images.githubusercontent.com/69328615/149852287-dd98924f-3965-4dd2-8a82-55373b7a9f46.png)
-![image](https://user-images.githubusercontent.com/69328615/149852320-fb20f344-c265-42bc-9d74-cd6ce66a5436.png)
-![image](https://user-images.githubusercontent.com/69328615/149852335-6489ce1a-2e26-4a2e-9400-56c58994af5a.png)
-![image](https://user-images.githubusercontent.com/69328615/149852361-3bb13cc1-4a81-4170-91d1-481a86c68789.png)
-![image](https://user-images.githubusercontent.com/69328615/149852389-6f162f45-8903-4523-a62c-7b8c4fc690f0.png)
-![image](https://user-images.githubusercontent.com/69328615/149852423-22fa179a-e64b-411e-930d-c5968c316f9c.png)
-![image](https://user-images.githubusercontent.com/69328615/149852444-7682b662-f291-4c86-9d1b-0561f1d9537c.png)
-![image](https://user-images.githubusercontent.com/69328615/149852466-80396df6-39f5-4891-8fb5-bc29fbed0b2b.png)
+![image](https://user-images.githubusercontent.com/69328615/150025102-c0b0d3ed-0f9d-4018-9f25-1217dab28a10.png)
+![image](https://user-images.githubusercontent.com/69328615/150025056-be99ca15-be25-4987-9d02-9fa1987c8b1b.png)
+![image](https://user-images.githubusercontent.com/69328615/150025206-06cae8a1-7f64-42de-837c-cd505c909f8a.png)
+![image](https://user-images.githubusercontent.com/69328615/150025260-d4a4d890-a651-4667-b769-37871ababac3.png)
+![image](https://user-images.githubusercontent.com/69328615/150025343-875093af-7171-4da2-a49b-5f78d1fd0e5e.png)
+![image](https://user-images.githubusercontent.com/69328615/150025430-95872561-5b13-4875-bb04-d7d73ffa7fde.png)
+![image](https://user-images.githubusercontent.com/69328615/150025475-c691dc84-bf11-4d23-947a-e977be08cabd.png)
+![image](https://user-images.githubusercontent.com/69328615/150025516-31f8cd52-a9f3-48af-ae71-8bd3aa66da1f.png)
+![image](https://user-images.githubusercontent.com/69328615/150025543-f61fb5ae-d667-41af-8755-91fc304d887c.png)
+![image](https://user-images.githubusercontent.com/69328615/150025597-ee948342-afd0-40dd-918a-d476f1b3cb71.png)
+![image](https://user-images.githubusercontent.com/69328615/150025642-76923d6b-22aa-48cd-8f6d-0664e39d0915.png)
+![image](https://user-images.githubusercontent.com/69328615/150025790-9cfc8b55-0c54-4d49-a9fc-9ba90858d666.png)
+
 
 # To do
 
