@@ -60,7 +60,6 @@ class PlayState extends FlxState
 
 		addStage();
 
-
 		/*for (i in 0...pathList.length){
 			FlxG.sound.cache('assets/music/' + pathList[i][1] + "Z/" + pathList[i][1] + pathList[i][0]);
 		}*/
@@ -190,15 +189,43 @@ class PlayState extends FlxState
 	}
 
 	public function addStage(){
+		var stageLocation:Float = -4096;
+		// setting the x properly so the loop looks clean
+		// if you are making a stage and need to do this, look at the frameX variable in the first frame for your new value
+		switch(stageList){
+			case 'GH':
+				stageLocation = -4096;
+			case 'CP' | 'MS':
+				stageLocation = -1536;
+			case 'SP' | 'FB' | 'PG' | 'HC' | 'OO' | 'LR' | 'TM':
+				stageLocation = -2048;
+			case 'MM':
+				stageLocation = -2034;
+			case 'SS':
+				stageLocation = -3072;
+		}
 		bg = new FlxSprite();
-		bg.x = -4096;
-		if (stageList == 'FB'){
-			bg.x -= 250;
-		}
-		if (stageList == 'PG'){
-			bg.y -= 250;
-		}
+		bg.x = stageLocation;
 		bg.y = 150;
+		// adjusting location again
+		switch(stageList){
+			case 'CP':
+				bg.y -= 200;
+			case 'SP':
+				bg.y -= 650;
+			case 'FB':
+				bg.y -= 700;
+			case 'PG':
+				bg.y -= 250;
+			case 'SS':
+				bg.y -= 500;
+			case 'MS':
+				bg.y -= 384.25;
+			case 'OO':
+				bg.y -= 244;
+			case 'LR':
+				bg.y = 0;
+		}
 		bg.frames = AssetPaths.getSparrowAtlas('bg_' + stageList + 'Z');
 		bg.scale.set(2, 2);
 		/*if (stageList == 'SP'){
