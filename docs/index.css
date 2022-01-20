@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
 :root {
   --background-color: #f6cc29;
   --button-color: black;
@@ -12,6 +14,8 @@
 html, body, main {
   height: 100%;
   width: auto;
+  margin: auto;
+  text-align: center;
 }
 
 body {
@@ -103,4 +107,12 @@ button.skew:hover::after {
 button.skew:hover::before {
   transform: skewX(-45deg) translateX(6px) translateY(5px);
   transition: transform var(--animation-duration) var(--animation-in-curve);
+}
+
+h1, p{
+	font-family: 'Noto Sans', sans-serif;
+}
+a{
+	text-decoration: none;
+	color:White;
 }
