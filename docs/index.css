@@ -108,10 +108,8 @@ button.skew:hover::before {
   transform: skewX(-45deg) translateX(6px) translateY(5px);
   transition: transform var(--animation-duration) var(--animation-in-curve);
 }
-p, h1{
-	font-family: 'Noto Sans', sans-serif;
-}
-a{
+
+a, p, h1, h3{
 	text-decoration: none;
 	color: White;
 	font-family: 'Righteous', cursive;
