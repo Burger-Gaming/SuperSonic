@@ -197,11 +197,9 @@ class PlayState extends FlxState
 		// setting the x properly so the loop looks clean
 		// if you are making a stage and need to do this, look at the frameX variable in the first frame for your new value
 		switch(stageList){
-			case 'GH':
-				stageLocation = -4096;
 			case 'CP' | 'MS':
 				stageLocation = -1536;
-			case 'SP' | 'FB' | 'PG' | 'HC' | 'OO' | 'LR' | 'TM' | 'AI':
+			case 'SP' | 'FB' | 'PG' | 'HC' | 'OO' | 'LR' | 'TM' | 'AI' | 'GH':
 				stageLocation = -2048;
 			case 'MM':
 				stageLocation = -2034;
@@ -213,6 +211,8 @@ class PlayState extends FlxState
 		bg.y = 150;
 		// adjusting location again
 		switch(stageList){
+			case 'GH':
+				bg.y -= 500;
 			case 'CP':
 				bg.y -= 200;
 			case 'SP':
