@@ -68,6 +68,7 @@ class PlayState extends FlxState
 		}
 
 		trace('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0]);
+
 	}
 
 	override public function update(elapsed:Float)
@@ -92,6 +93,15 @@ class PlayState extends FlxState
 		if (FlxG.keys.justPressed.DOWN){
 			switchChar(-1);
 		}
+
+		#if debug
+			if(FlxG.keys.justPressed.S){
+				if (FlxG.sound.music != null){
+					FlxG.sound.music.stop();
+				}
+				FlxG.switchState(new SoundTest());
+			}
+		#end
 	}
 
 	public function switchChar(change:Int = 1){
