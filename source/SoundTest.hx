@@ -7,6 +7,7 @@ import flixel.text.FlxText;
 import flixel.tweens.FlxTween;
 
 var image:String = 'clowmba.png';
+var sound:String = 'clown.ogg';
 
 class SoundTest extends FlxState {
     var yeah:FlxText;
@@ -132,6 +133,12 @@ class SoundTest extends FlxState {
         }
         if (fm == 8 && pcm == 20 && da == 7){
             image = 'clowmba.png';
+            sound = 'clown.ogg';
+            FlxG.switchState(new ImgState());
+        }
+        if (fm == 6 && pcm == 16 && da == 8){
+            image = 'fard.png';
+            sound = 'fard.ogg';
             FlxG.switchState(new ImgState());
         }
     }
@@ -142,7 +149,7 @@ class ImgState extends FlxState {
         var bg:FlxSprite = new FlxSprite().loadGraphic('assets/images/soundtest/' + image);
         add(bg);
 
-        FlxG.sound.playMusic('assets/music/soundtest/clown.ogg');
+        FlxG.sound.playMusic('assets/music/soundtest/' + sound);
     }
     override function update(elapsed:Float){
         if (FlxG.keys.justPressed.ESCAPE){

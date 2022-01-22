@@ -94,14 +94,12 @@ class PlayState extends FlxState
 			switchChar(-1);
 		}
 
-		#if debug
-			if(FlxG.keys.justPressed.S){
-				if (FlxG.sound.music != null){
-					FlxG.sound.music.destroy();
-				}
-				FlxG.switchState(new SoundTest());
+		if(FlxG.keys.justPressed.S){
+			if (FlxG.sound.music != null){
+				FlxG.sound.music.destroy();
 			}
-		#end
+			FlxG.switchState(new SoundTest());
+		}
 	}
 
 	public function switchChar(change:Int = 1){
