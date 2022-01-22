@@ -6,6 +6,8 @@ import flixel.FlxG;
 import flixel.text.FlxText;
 import flixel.tweens.FlxTween;
 
+var image:String = 'clowmba.png';
+
 class SoundTest extends FlxState {
     var yeah:FlxText;
     var nah:FlxText;
@@ -62,6 +64,11 @@ class SoundTest extends FlxState {
         }
         if (FlxG.keys.justPressed.ENTER){
             comboCheck();
+        }
+
+        if (FlxG.keys.justPressed.ESCAPE){
+            FlxG.sound.playMusic('assets/music/' + PlayState.pathList[FlxG.save.data.song][1] + "Z/" + PlayState.pathList[FlxG.save.data.song][1] + PlayState.pathList[FlxG.save.data.song][0], 1, true);
+            FlxG.switchState(new PlayState());
         }
         nah.text = 'fm. no: ' + fm + '\npcm. no: ' + pcm + '\nda. no: ' + da;
     }
@@ -122,6 +129,25 @@ class SoundTest extends FlxState {
     public function comboCheck(){
         if (fm == 7 && pcm == 27 && da == 87){
             FlxG.openURL('https://www.youtube.com/watch?v=a3Z7zEc7AXQ');
+        }
+        if (fm == 8 && pcm == 20 && da == 7){
+            image = 'clowmba.png';
+            FlxG.switchState(new ImgState());
+        }
+    }
+}
+
+class ImgState extends FlxState {
+    override function create(){
+        var bg:FlxSprite = new FlxSprite().loadGraphic('assets/images/soundtest/' + image);
+        add(bg);
+
+        FlxG.sound.playMusic('assets/music/soundtest/clown.ogg');
+    }
+    override function update(elapsed:Float){
+        if (FlxG.keys.justPressed.ESCAPE){
+            FlxG.sound.music.destroy();
+            FlxG.switchState(new SoundTest());
         }
     }
 }

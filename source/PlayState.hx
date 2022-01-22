@@ -97,7 +97,7 @@ class PlayState extends FlxState
 		#if debug
 			if(FlxG.keys.justPressed.S){
 				if (FlxG.sound.music != null){
-					FlxG.sound.music.stop();
+					FlxG.sound.music.destroy();
 				}
 				FlxG.switchState(new SoundTest());
 			}
