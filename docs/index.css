@@ -2,17 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 :root {
-  --background-color: #f6cc29;
   --button-color: black;
   --shadow-color: white;
   --button-width: 300px;
-  --button-height: 50px;
+  --button-height: 49.9px;
   --animation-in-curve: cubic-bezier(0.45, 0, 0.61, 2.63);
   --animation-out-curve: ease-in-out;
   --animation-duration: 0.2s;
 }
 
 html, body, main {
+  background: url(bg.png) no-repeat center center fixed; 
   height: 100%;
   width: auto;
   text-align: center;
@@ -109,8 +109,21 @@ button.skew:hover::before {
   transition: transform var(--animation-duration) var(--animation-in-curve);
 }
 
-a, p, h1, h3{
+p, h1, h3{
+	text-decoration: none;
+	color: black;
+	font-family: 'Righteous', cursive;
+}
+
+a{
 	text-decoration: none;
 	color: White;
 	font-family: 'Righteous', cursive;
+}
+
+h1.welcometext{
+  text-decoration: none;
+  color: black;
+  font-family: 'Righteous', cursive;
+  line-height: 5;
 }
