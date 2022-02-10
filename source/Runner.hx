@@ -155,6 +155,16 @@ class Runner extends FlxSprite{
                     scale.set(3, 3);
                     animation.play("run");
                     flipX = true;
+            case 'sonicBS':
+                loadGraphic('assets/images/sonicBS.png', true, 32, 54);
+                animation.add("run", [0, 1, 2, 3, 4, 5, 6, 7], 15, true);
+                screenCenter(X);
+                screenCenter(Y);
+                // sanic.screenCenter(X);
+                y += 150;
+                scale.set(4, 4);
+                animation.play("run");
+                flipX = true;
         }
         antialiasing = false;
     }

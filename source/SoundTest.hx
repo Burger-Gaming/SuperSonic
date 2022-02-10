@@ -63,6 +63,12 @@ class SoundTest extends FlxState {
         if (FlxG.keys.justPressed.RIGHT){
             changeNum(1);
         }
+        if (FlxG.keys.justPressed.LEFT && FlxG.keys.pressed.SHIFT){
+            changeNum(-9);
+        }
+        if (FlxG.keys.justPressed.RIGHT && FlxG.keys.pressed.SHIFT){
+            changeNum(9);
+        }
         if (FlxG.keys.justPressed.ENTER){
             comboCheck();
         }
@@ -140,6 +146,12 @@ class SoundTest extends FlxState {
             image = 'fard.png';
             sound = 'fard.ogg';
             FlxG.switchState(new ImgState());
+        }
+        if (fm == 10 && pcm == 17 && da == 94){
+            FlxG.switchState(new BlueSpheres());
+        }
+        if (fm == 5 && pcm == 10 && da == 8){
+            FlxG.openURL('https://www.youtube.com/channel/UCytsYnWCEfy0HMY7lO1_-fw');
         }
     }
 }
