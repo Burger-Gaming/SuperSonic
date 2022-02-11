@@ -34,4 +34,66 @@
 	<SubTexture name="bluesphere globe roll0029" x="538" y="882" width="512" height="202"/>
 	<SubTexture name="bluesphere globe roll0030" x="1066" y="882" width="512" height="202"/>
 	<SubTexture name="bluesphere globe roll0031" x="1594" y="882" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0000" x="10" y="882" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0001" x="538" y="882" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0002" x="1066" y="882" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0003" x="1594" y="882" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0004" x="10" y="10" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0005" x="538" y="10" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0006" x="1066" y="10" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0007" x="1594" y="10" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0008" x="2122" y="10" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0009" x="2650" y="10" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0010" x="3178" y="10" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0011" x="10" y="228" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0012" x="538" y="228" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0013" x="1066" y="228" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0014" x="1594" y="228" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0015" x="2122" y="228" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0016" x="2650" y="228" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0017" x="3178" y="228" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0018" x="10" y="446" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0019" x="538" y="446" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0020" x="1066" y="446" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0021" x="1594" y="446" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0022" x="2122" y="446" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0023" x="2650" y="446" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0024" x="3178" y="446" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0025" x="10" y="664" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0026" x="538" y="664" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0027" x="1066" y="664" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0028" x="1594" y="664" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0029" x="2122" y="664" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0030" x="2650" y="664" width="512" height="202"/>
+	<SubTexture name="bluesphere globe roll offset0031" x="3178" y="664" width="512" height="202"/>
+	<SubTexture name="bluesphere globe turn left0000" x="2122" y="882" width="512" height="202" frameX="0" frameY="0" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn left0001" x="2650" y="882" width="512" height="202" frameX="0" frameY="0" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn left0002" x="3178" y="882" width="512" height="202" frameX="0" frameY="0" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn left0003" x="10" y="1100" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn left0004" x="538" y="1100" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn left0005" x="1066" y="1100" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn left0006" x="1594" y="1100" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn left0007" x="2122" y="1100" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn left0008" x="2650" y="1100" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn left0009" x="3178" y="1100" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn left0010" x="10" y="1318" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn left0011" x="538" y="1318" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn left0012" x="1066" y="1318" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn left0013" x="1594" y="1318" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn left0014" x="2122" y="1318" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn right0000" x="2122" y="1318" width="512" height="202" frameX="0" frameY="0" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn right0001" x="1594" y="1318" width="512" height="202" frameX="0" frameY="0" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn right0002" x="1066" y="1318" width="512" height="202" frameX="0" frameY="0" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn right0003" x="538" y="1318" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn right0004" x="10" y="1318" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn right0005" x="3178" y="1100" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn right0006" x="2650" y="1100" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn right0007" x="2650" y="1318" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn right0008" x="1594" y="1100" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn right0009" x="1066" y="1100" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn right0010" x="538" y="1100" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn right0011" x="10" y="1100" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn right0012" x="3178" y="882" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn right0013" x="2650" y="882" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
+	<SubTexture name="bluesphere globe turn right0014" x="2122" y="882" width="512" height="202" frameX="0" frameY="-1" frameWidth="512" frameHeight="203"/>
 </TextureAtlas>

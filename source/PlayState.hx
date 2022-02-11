@@ -145,6 +145,9 @@ class PlayState extends FlxState
 			case 14:
 				FlxG.save.data.character = 'lil eggie';
 		}
+		if(FlxG.save.data.character == null){
+			FlxG.save.data.character = 'sonic';
+		}
 		trace(FlxG.save.data.characterNum);
 		sanic.destroy();
 		sanic = new Runner(0, 435, FlxG.save.data.character);

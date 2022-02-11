@@ -134,7 +134,24 @@ class SoundTest extends FlxState {
         }
     }
     public function comboCheck(){
-        if (fm == 7 && pcm == 27 && da == 87){
+        var combination:String = fm + ', ' + pcm + ', ' + da;
+        switch(combination){
+            case "7, 27, 87":
+                FlxG.openURL('https://www.youtube.com/watch?v=a3Z7zEc7AXQ');
+            case "8, 20, 7":
+                image = 'clowmba.png';
+                sound = 'clown.ogg';
+                FlxG.switchState(new ImgState());
+            case "6, 16, 8":
+                image = 'fard.png';
+                sound = 'fard.ogg';
+                FlxG.switchState(new ImgState());
+            case "5, 10, 8":
+                FlxG.openURL('https://www.youtube.com/channel/UCytsYnWCEfy0HMY7lO1_-fw');
+            case "10, 17, 94":
+                FlxG.switchState(new BlueSpheres());
+        }
+        /*if (fm == 7 && pcm == 27 && da == 87){
             FlxG.openURL('https://www.youtube.com/watch?v=a3Z7zEc7AXQ');
         }
         if (fm == 8 && pcm == 20 && da == 7){
@@ -152,7 +169,7 @@ class SoundTest extends FlxState {
         }
         if (fm == 5 && pcm == 10 && da == 8){
             FlxG.openURL('https://www.youtube.com/channel/UCytsYnWCEfy0HMY7lO1_-fw');
-        }
+        }*/
     }
 }
 

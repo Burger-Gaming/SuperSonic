@@ -161,7 +161,7 @@ class Runner extends FlxSprite{
                 screenCenter(X);
                 screenCenter(Y);
                 // sanic.screenCenter(X);
-                y += 150;
+                y += 190;
                 scale.set(4, 4);
                 animation.play("run");
                 flipX = true;
