@@ -6,5 +6,5 @@ Arrow Keys - Left & Right: Switch song.
 
 Programmers:
 - SmashingGoomba
-- Foxx (Fucking retard. (This comment was made by me, not Foxx.))
+- Foxx (Fucking retard. (This comment was made by him, not me.))
 - Soulslimm (Logo Designer as well.)
