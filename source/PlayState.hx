@@ -8,6 +8,7 @@ import flixel.graphics.frames.FlxAtlasFrames;
 import lime.utils.Assets;
 import flixel.group.FlxSpriteGroup;
 import flixel.text.FlxText;
+import Discord.DiscordClient;
 
 class PlayState extends FlxState
 {
@@ -69,12 +70,16 @@ class PlayState extends FlxState
 
 		trace('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0]);
 
+		DiscordClient.initialize();
+		DiscordClient.changePresence("Listening to a song...", pathList[FlxG.save.data.song][2]);
 	}
 
 	override public function update(elapsed:Float)
 	{
-
 		super.update(elapsed);
+		if (elapsed == 1){
+			DiscordClient.changePresence("Listening to a song...", pathList[FlxG.save.data.song][2]);
+		}
 		/*for (i in 0...list.length){
 			FlxG.sound.music.play(list[0][1]);
 		}*/
@@ -181,6 +186,8 @@ class PlayState extends FlxState
 			FlxG.sound.playMusic('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0], 1, true);
 		}
 		trace('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0]);
+
+		DiscordClient.changePresence("Listening to a song...", pathList[FlxG.save.data.song][2]);
 	}
 
 	public function switchStage(change:Int = 1){
@@ -205,8 +212,6 @@ class PlayState extends FlxState
 
 	public function addStage(){
 		var stageLocation:Float = -4096;
-		// setting the x properly so the loop looks clean
-		// if you are making a stage and need to do this, look at the frameX variable in the first frame for your new value
 		switch(stageList){
 			case 'CP' | 'MS':
 				stageLocation = -1536;
@@ -243,35 +248,27 @@ class PlayState extends FlxState
 		}
 		bg.frames = AssetPaths.getSparrowAtlas('bg_' + stageList + 'Z');
 		bg.scale.set(2, 2);
-		/*if (stageList == 'SP'){
-			bg.y -= 25;
-		}*/
-		//ground.animation.addByPrefix("ground", "moving ground", 30, true);
-		// preventing the ground from disappearing
 		bg.animation.addByPrefix("bg", "bg moving instance 1", 30, true);
 		bg.animation.play("bg");
 		add(bg);
+
 		ground = new FlxSprite();
 		ground.x = -2432;
 		ground.y = 435;
 		ground.frames = AssetPaths.getSparrowAtlas('ground_' + stageList + 'Z');
-		//ground.animation.addByPrefix("ground", "moving ground", 30, true);
-		// preventing the ground from disappearing
 		ground.animation.addByIndices("ground", "moving ground", [10, 11, 12, 13, 14, 15, 16, 17, 18], "", 30, true);
 		ground.animation.play("ground");
 		add(ground);
 
 		sanic = new Runner(0, 435, FlxG.save.data.character);
 		sanic.screenCenter(X);
-		if (stageList == 'AI'){ // adjusting y level for angel island
+		if (stageList == 'AI'){
 			sanic.y += 30;
 		}
 		add(sanic);
 
 		songText = new FlxText();
 		songText.setFormat('assets/fonts/sonic-hud-font.ttf', 32, 0xFFFFFF00, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, 0xFF0000FF, true);
-		//songText.screenCenter(X);
-		//songText.x = FlxG.width / 2 - songText.width / 2;
 		songText.text = pathList[FlxG.save.data.stage][2].toLowerCase();
 		songText.y = 0;
 		add(songText);
@@ -281,8 +278,5 @@ class PlayState extends FlxState
 		charText.text = 'current character: ' + FlxG.save.data.character;
 		charText.y = FlxG.height - charText.height;
 		add(charText);
-	}
-	public function test(){
-		
 	}
 }
