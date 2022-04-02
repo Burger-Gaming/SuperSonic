@@ -2,11 +2,13 @@ package;
 
 import Sys.sleep;
 import discord_rpc.DiscordRpc;
+import flixel.FlxG;
 
 using StringTools;
 
 class DiscordClient
 {
+    public static var isInitialized:Bool = false;
 	public function new()
 	{
 		trace("Discord Client starting...");
@@ -36,8 +38,8 @@ class DiscordClient
 	static function onReady()
 	{
 		DiscordRpc.presence({
-			details: "Listening to bangers...",
-			state: null,
+			details: "Listening to a song...",
+			state: PlayState.pathList[FlxG.save.data.song][2],
 			largeImageKey: 'icon',
 			largeImageText: "SuperSonic"
 		});
@@ -59,6 +61,7 @@ class DiscordClient
 		{
 			new DiscordClient();
 		});
+        isInitialized = true;
 		trace("Discord Client initialized");
 	}
 

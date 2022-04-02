@@ -70,16 +70,15 @@ class PlayState extends FlxState
 
 		trace('assets/music/' + pathList[FlxG.save.data.song][1] + "Z/" + pathList[FlxG.save.data.song][1] + pathList[FlxG.save.data.song][0]);
 
-		DiscordClient.initialize();
-		DiscordClient.changePresence("Listening to a song...", pathList[FlxG.save.data.song][2]);
+		if (DiscordClient.isInitialized){
+			DiscordClient.changePresence("Listening to a song...", pathList[FlxG.save.data.song][2]);
+		}
+		
 	}
 
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
-		if (elapsed == 1){
-			DiscordClient.changePresence("Listening to a song...", pathList[FlxG.save.data.song][2]);
-		}
 		/*for (i in 0...list.length){
 			FlxG.sound.music.play(list[0][1]);
 		}*/
@@ -278,5 +277,9 @@ class PlayState extends FlxState
 		charText.text = 'current character: ' + FlxG.save.data.character;
 		charText.y = FlxG.height - charText.height;
 		add(charText);
+
+		if (!DiscordClient.isInitialized){
+			DiscordClient.initialize();
+		}
 	}
 }
