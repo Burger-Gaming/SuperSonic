@@ -24,15 +24,15 @@ Only RAM requirement: 100mb (it used to be a gigabyte 🤡, though sometimes [it
 # To do
 
 - BPM system (Most likely gonna change the running speed of the chosen character depending on the BPM.) This is on hold.
-- Finish adding all characters (add as many characters as we can).
-- Fix partial black screen bug. (ISSUE ON MAC)
-- Discord RPC
 
 # Completed
 
 - All tracks added.
 - Stage system implemented.
-
+- Discord RPC.
+- Probably all the characters we need!
+- Fixed partial black screen bug!
+- 
 # Disclaimer 
 
 - This project is not endorsed by SEGA or Sonic Team.
