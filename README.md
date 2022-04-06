@@ -32,7 +32,7 @@ Only RAM requirement: 100mb (it used to be a gigabyte 🤡, though sometimes [it
 - Discord RPC.
 - Probably all the characters we need!
 - Fixed partial black screen bug!
-- 
+
 # Disclaimer 
 
 - This project is not endorsed by SEGA or Sonic Team.
